@@ -1,0 +1,41 @@
+{{define "proveedores2"}}
+{{template "cabecera"}}
+
+  <table class="table">
+            <thead>
+                <tr>
+                    <th>Id proveedor</th>
+                    <th>Proveedor</th>
+                  
+                    
+                </tr>
+            </thead>
+            <tbody>
+        {{ range.}}
+                <tr>
+                    <td id="celda +'{{.Id_pro}}'"><text id="color"+"'{{.Id_pro}}'"> {{.Id_pro}}</text></td>
+					<td>   {{.Proveedor}}
+					
+                </tr>         
+        {{end}} 
+            </tbody>
+        </table>        
+
+{{template "pie"}}
+<script lenguaje="javascript" >
+  var color1;
+  color1=document.getElementById("color1").textContent;
+  if(color1==1){
+    document.getElementById("celda1").style.backgroundColor="#8B0000";
+  }
+  color2=document.getElementById("color2").textContent;
+  if(color2==2){
+    document.getElementById("celda2").style.backgroundColor="#8B0000";
+  }
+  color3=document.getElementById("color3").textContent;
+  if(color3==3){
+    document.getElementById("celda3").style.backgroundColor="#8B0000";
+  }
+  
+  </script>
+{{end}}

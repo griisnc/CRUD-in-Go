@@ -1,0 +1,47 @@
+{{define "editar3"}}
+{{template "cabecera"}}
+ <div class="card">
+        <div class="card-header">
+          Productos
+        </div>
+        <div class="card-body">
+           <form  action="/actualizar3" method="POST">
+            <div class="form-group">
+              <label for="">ID</label>
+              <input type="number"
+                class="form-control" name="Id_p" id="id_p" aria-describedby="helpId" value="{{.Id_p}}">
+            </div>
+
+            <div class="form-group">
+              <label for="">Descripción</label>
+              <input type="text"
+                class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" value="{{.Descripcion}}">
+              <small id="helpId" class="form-text text-muted">Escribe la descripción del producto</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="">Tipo de producto</label>
+              <input type="text" class="form-control" name="Tipo_de_producto" id="Tipo_de_producto" value="{{.Tipo_de_producto}}" >
+            </div>
+            <div class="form-group">
+              <label for="">Stock (Piezas)</label>
+              <input type="number" class="form-control" name="stock" id="stock" value="{{.Stock}}" >
+            </div>
+            
+            <div class="form-group">
+              <label for="">Precio por unidad</label>
+              <input type="number" class="form-control" name="precio_unidad" id="precio_unidad" value="{{.Precio_unidad}}" >
+            </div>
+            <div class="form-group">
+              <label for="">Precio Total</label>
+              <input type="number" class="form-control" name="precio_t" id="precio_t" value="{{.Precio_t}}" >
+            </div>
+            <button type="submit" class="btn btn-success">Agregar</button>
+            <a name="" id="" class="btn btn-primary" href="/inventory" role="button">Cancelar</a>
+            </form>
+    </div>
+       
+</div>
+
+{{template "pie"}}
+{{end}}

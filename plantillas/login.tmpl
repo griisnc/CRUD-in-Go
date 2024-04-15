@@ -1,0 +1,28 @@
+{{ define "login"}}
+{{ template "cabecera"}}
+<center>
+       <div style="background: #fff; border:1px solid #BDBDBD; border-radius:5px; width: 40%;">
+        <center><H1>Iniciar Sesión</H1></center>
+       </div><br>
+       <div class="card" style="background: #fff; width:25rem;">
+         
+         <div class="card-body">
+           
+           <form action="/enviar3" method="POST">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Usuario</span>
+              <input name="usuario" id="usuario"  type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
+            </div>
+            <br>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Contraseña</span>
+              <input name="pass" id="pass" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"  required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Enviar</button>
+          
+           </form>
+         </div>
+       </div></center>
+{{template "pie"}}
+{{end}}

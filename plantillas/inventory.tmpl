@@ -1,0 +1,55 @@
+{{define "inventory"}}
+{{template "cabecera"}}
+
+
+
+    <div style="background: #fff; border:1px solid #BDBDBD; border-radius:5px;">
+
+  <table class="table" style=" width: 100%;">
+            <thead>
+                <tr>
+                    <th>ID producto</th>//el nombre que llevará cada columna 
+                    <th>Id proveedor</th>
+                    <th>Descripción</th>
+                    <th>Precio por unidad</th>
+                    <th>Precio total</th>
+                    <th>Stock</th>
+                    <th>Tipo de producto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{ range.}}//se habre función por la cual se extraen los datos que requerimos de la tabla en la base de datos
+                <tr>
+                    <td>  {{.Id_p}} </td>//id del producto
+                    <td id="celda +'{{.Id_pro}}'"><text id="color"+"'{{.Id_pro}}'"> {{.Id_pro}}</text></td>//id del proveedor
+                    <td>   {{.Descripcion}}//descripcion del producto
+                    <td>   {{.Precio_unidad}}</td>//precio de cada producto
+                              <td>   {{.Precio_t}}</td>//el precio total de los productos
+                    <td>   {{.Stock}}</td>//cantidad disponible
+                    <td>   {{.Tipo_de_producto}}</td>
+                    //botones para poder editar o borrar los productos
+                    <td> <a name="" id="" class="btn btn-warning" href="/editar3?id_p={{.Id_p}}" role="button">Editar</a>   | <a name="" id="" class="btn btn-danger" href="/borrar3?id_p={{.Id_p}}" role="button">Borrar</a>  </td>
+                </tr>         
+        {{end}} 
+            </tbody>
+        </table>        
+</div>
+{{template "pie"}}
+<script lenguaje="javascript" >
+  var color1;
+  color1=document.getElementById("color1").textContent;
+  if(color1==1){
+    document.getElementById("celda1").style.backgroundColor="#8B0000";
+  }
+  color2=document.getElementById("color2").textContent;
+  if(color2==2){
+    document.getElementById("celda2").style.backgroundColor="#8B0000";
+  }
+  color3=document.getElementById("color3").textContent;
+  if(color3==3){
+    document.getElementById("celda3").style.backgroundColor="#8B0000";
+  }
+  
+  </script>
+{{end}}

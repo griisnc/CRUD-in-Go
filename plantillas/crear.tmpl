@@ -1,0 +1,35 @@
+{{define "crear"}}
+{{template "cabecera"}}
+ <div class="card">
+        <div class="card-header">
+            Usuarios
+        </div>
+        <div class="card-body">
+           <form  action="/insertar" method="POST">
+            <div class="form-group">
+              <label for="">Usuario</label>
+              <input type="text"
+                class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu usuario</small>
+            </div>
+            <div class="form-group">
+              <label for="">Contraseña</label>
+              <input type="password" class="form-control" name="pass" id="pass" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Tipo de Usuario</label>
+                <select class="custom-select" name="tipo_u" id="tipo_u">
+                    <option selected>-</option>
+                    <option value="admin">admin</option>
+                    <option value="empleado">empleado</option>             
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Agregar</button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+            </form>
+    </div>
+       
+</div>
+
+{{template "pie"}}
+{{end}}

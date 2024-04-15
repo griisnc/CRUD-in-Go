@@ -1,0 +1,29 @@
+{{define "editar_borrarProveedor"}}
+{{template "cabecera"}}
+     
+    <br/>
+    <br/><center>
+    <div style="background: #fff; border:1px solid #BDBDBD; border-radius:5px;">
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Proveedor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{ range.}}
+                <tr>
+                    <td>   {{.Id_pro }} </td>
+                    <td>  {{.Proveedor}} </td>
+                     //botones para poder editar o borrar los productos
+                    <td> <a name="" id="" class="btn btn-warning" href="/editar2?id_pro={{.Id_pro}}" role="button">Editar</a>   
+                    | <a name="" id="" class="btn btn-danger" href="/borrarProveedor?id_pro={{.Id_pro}}" role="button">Borrar</a>  </td>
+                </tr>         
+        {{end}} 
+            </tbody>
+        </table>  </center>  
+    </div>        
+{{template "pie"}}
+{{end}}

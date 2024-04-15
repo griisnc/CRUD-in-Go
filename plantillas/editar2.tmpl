@@ -1,0 +1,30 @@
+{{define "editar2"}}
+{{template "cabecera"}}
+ <div class="card">
+        <div class="card-header">
+           Proveedores
+        </div>
+        <div class="card-body">
+           <form  action="/actualizar2" method="POST">
+           <div class="form-group">
+               <label for="">Id Proveedor</label>
+                <label class="sr-only" for="inputName">ID</label>
+                <input type="text" value={{.Id_pro}} class="form-control" name="id_pro" id="id_pro" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="">Proveedor</label>
+              <input type="text"
+                class="form-control" name="proveedor" value={{.Proveedor}} id="proveedor" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe proveedor</small>
+            </div>
+            
+           
+            <button type="submit" class="btn btn-success">Modificar</button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+            </form>
+    </div>
+       
+</div>
+
+{{template "pie"}}
+{{end}}

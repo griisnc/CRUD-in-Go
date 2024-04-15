@@ -1,0 +1,26 @@
+{{define "ConsulUsuarios"}}
+{{template "cabecera"}}
+    <br/>
+    <br/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Tipo de usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{ range.}}
+                <tr>
+                    <td>   {{.Id_u }} </td>
+                    <td>  {{.Usuario}} </td>
+                    <td>  {{.Pass}}</td>
+                    <td>   {{.Tipo_u}}</td>
+                </tr>         
+        {{end}} 
+            </tbody>
+        </table>  
+{{template "pie"}}
+{{end}}

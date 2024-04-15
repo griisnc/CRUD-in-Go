@@ -1,0 +1,31 @@
+{{define "editar_borrarU"}}
+{{template "cabecera"}}
+     
+    <br/>
+    <br/><center>
+    <div style="background: #fff; border:1px solid #BDBDBD; border-radius:5px;">
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Tipo de usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{ range.}}
+                <tr>
+                    <td>   {{.Id_u }} </td>
+                    <td>  {{.Usuario}} </td>
+                    <td>  {{.Pass}}</td>
+                    <td>   {{.Tipo_u}}</td>
+                    <td> <a name="" id="" class="btn btn-warning" href="/editar?id_u={{.Id_u}}" role="button">Editar</a>   | <a name="" id="" class="btn btn-danger" href="/borrar?id_u={{.Id_u}}" role="button">Borrar</a>  </td>
+                </tr>         
+        {{end}} 
+            </tbody>
+        </table>  </center>  
+    </div>        
+{{template "pie"}}
+{{end}}

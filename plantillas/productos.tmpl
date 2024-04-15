@@ -1,0 +1,49 @@
+{{define "productos"}}
+{{template "cabecera"}}
+ <div class="card">
+        <div class="card-header">
+          Productos
+        </div>
+        <div class="card-body">
+           <form  action="/enviar" method="POST">
+            <div class="form-group">
+              <label for="">Descripción</label>
+              <input type="text"
+                class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder=""required>
+              <small id="helpId" class="form-text text-muted">Escribe la descripción del producto</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="">Tipo de producto</label>
+              <input type="text" class="form-control" name="Tipo_de_producto" id="Tipo_de_producto" placeholder="" required>
+            </div>
+            <div class="form-group">
+              <label for="">Stock (Piezas)</label>
+              <input type="number" class="form-control" name="stock" id="stock" placeholder="" required>
+            </div>
+            <div class="form-group">
+                <label for="">Proveedores</label>
+                <select class="custom-select" name="Id_pro" id="Id_pro" required>
+                   <option selected>-</option>
+                    {{range.}}
+                    <option value="{{.Id_pro}}">{{.Proveedor}}</option>
+                    {{end}}      
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="">Precio por unidad</label>
+              <input type="number" class="form-control" name="precio_unidad" id="precio_unidad" placeholder="" required>
+            </div>
+            <div class="form-group">
+              <label for="">Precio Total</label>
+              <input type="number" class="form-control" name="precio_t" id="precio_t" placeholder="" required>
+            </div>
+            <button type="submit" class="btn btn-success">Agregar</button>
+            <a name="" id="" class="btn btn-primary" href="/inventory" role="button">Cancelar</a>
+            </form>
+    </div>
+       
+</div>
+
+{{template "pie"}}
+{{end}}
